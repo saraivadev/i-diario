@@ -1,0 +1,38 @@
+<% content_for :js do %>
+<% end %>
+
+<div class="widget-body no-padding">
+  <%= simple_form_for @yearly_exam_record_report_form, url: yearly_exam_record_report_path, method: :post, html: { class: 'smart-form', target: '_blank' } do |f| %>
+    <%= f.error_notification unless @yearly_exam_record_report_form.errors[:daily_notes].any? %>
+
+    <div class="alert alert-danger <%= 'hidden' unless @yearly_exam_record_report_form.errors[:daily_notes].any? %>">
+      <i class="fa fa-exclamation-circle fa-fw"></i>
+      <%= @yearly_exam_record_report_form.errors[:daily_notes].first %>
+    </div>
+
+    <fieldset>
+      <div class="row">
+        <div class="col col-sm-4">
+          <%= f.input :unity_id, as: :select2, elements: @unities, user: current_user, readonly: !current_user.admin? %>
+        </div>
+
+        <div class="col col-sm-4">
+          <%= f.input :classroom_id, as: :select2, elements: @classrooms, user: current_user,
+                input_html: { value: @yearly_exam_record_report_form.classroom_id } %>
+        </div>
+
+        <div class="col col-sm-4">
+            <%= f.input :discipline_id, as: :select2, elements: @disciplines, user: current_user,
+                  classroom_id: @yearly_exam_record_report_form.classroom_id,
+                  required: true, input_html: { value: @yearly_exam_record_report_form.discipline_id } %>
+        </div>
+      </div>
+
+      
+    </fieldset>
+
+    <footer>
+      <%= f.submit 'Imprimir', class: 'btn btn-primary', id: 'send-form' %>
+    </footer>
+  <% end %>
+</div>

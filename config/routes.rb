@@ -431,6 +431,9 @@ Rails.application.routes.draw do
     get '/reports/fetch_step', to: 'exam_record_report#fetch_step', as: 'fetch_step_exam_record_report'
     post '/reports/exam_record', to: 'exam_record_report#report', as: 'exam_record_report'
 
+    get '/reports/yearly_exam_record', to: 'yearly_exam_record_report#form', as: 'yearly_exam_record_report'
+    post '/reports/yearly_exam_record', to: 'yearly_exam_record_report#report', as: 'yearly_exam_record_report'
+
     get '/reports/partial_score_record', to: 'partial_score_record_report#form', as: 'partial_score_record_report'
     get '/reports/partial_score_record/students_by_daily_note', to: 'partial_score_record_report#students_by_daily_note', as: 'students_by_daily_note'
     post '/reports/partial_score_record', to: 'partial_score_record_report#report', as: 'exam_record_report'

@@ -35,6 +35,7 @@ pt-BR:
     observation_record: 'registro-de-observacoes'
     exam_record: 'registro-de-avaliacoes'
     exam_record_report: 'registro-de-avaliacao-numerica'
+    yearly_exam_record_report: 'registro-anual-de-avaliacao-numerica'
     knowledge_area_lesson_plan: 'planos-de-aula-por-areas-de-conhecimento'
     knowledge_area_lesson_plans: 'planos-de-aula-por-areas-de-conhecimento'
     knowledge_area_content_record: 'registros-de-conteudos-por-areas-de-conhecimento'
